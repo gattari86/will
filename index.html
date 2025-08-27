@@ -1,0 +1,787 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will's Job Search Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #fef7f7 0%, #fff5f5 100%);
+        }
+        
+        .poppy-gradient {
+            background: linear-gradient(135deg, #ff6b9d 0%, #ff8a9b 50%, #ffa8a8 100%);
+        }
+        
+        .poppy-bg {
+            background-color: #ff6b9d;
+        }
+        
+        .poppy-text {
+            color: #e91e63;
+        }
+        
+        .poppy-border {
+            border-color: #ff6b9d;
+        }
+        
+        .salary-badge {
+            background: linear-gradient(90deg, #ff6b9d, #ff8a9b);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .company-tag {
+            background: #f8fafc;
+            color: #64748b;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .apply-btn {
+            background: linear-gradient(90deg, #ff6b9d, #ff8a9b);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .apply-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 25px rgba(255, 107, 157, 0.3);
+            color: white;
+        }
+        
+        .job-row {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f1f5f9;
+            transition: all 0.3s ease;
+        }
+        
+        .job-row:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .job-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+        
+        .job-description {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        
+        .job-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        
+        .posting-date {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .job-meta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        
+        .header-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff6b9d, #ff8a9b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            margin-right: 20px;
+        }
+        
+        .stats-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f1f5f9;
+        }
+        
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ff6b9d;
+            margin-bottom: 8px;
+        }
+        
+        .stats-label {
+            color: #64748b;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen py-8 px-4">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <div class="flex items-center justify-center mb-6">
+                    <div class="header-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-4xl font-bold text-gray-800 mb-2">Will's Job Search Results</h1>
+                        <p class="text-lg text-gray-600">Premium Recruiter Opportunities • Posted in Last 7 Days</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+                <div class="stats-card">
+                    <div class="stats-number">26</div>
+                    <div class="stats-label">Total Opportunities</div>
+                </div>
+                <div class="stats-card">
+                    <div class="stats-number">23</div>
+                    <div class="stats-label">Remote Positions</div>
+                </div>
+                <div class="stats-card">
+                    <div class="stats-number">$60K+</div>
+                    <div class="stats-label">Minimum Salary</div>
+                </div>
+                <div class="stats-card">
+                    <div class="stats-number">$230K</div>
+                    <div class="stats-label">Highest Potential</div>
+                </div>
+            </div>
+
+            <!-- Job Listings -->
+            <div class="space-y-4">
+                
+                <!-- Job 1 -->
+                <div class="job-row">
+                    <div class="job-title">Physician Recruiter (Direct Hire & Locum Tenens)</div>
+                    <div class="job-meta">
+                        <span class="company-tag">Covelo Group</span>
+                        <span class="salary-badge">$72,000/yr + Uncapped Commission</span>
+                        <span class="posting-date">~1 week ago</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-home mr-1"></i>Fully Remote
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        Full-cycle physician recruiting for direct-hire and locum tenens placements across the U.S. in a fast-paced staffing environment. Fully remote position with schedule flexibility. Requires prior healthcare recruiting experience.
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://www.glassdoor.com/job-listing/remote-physician-recruiter-direct-hire-locum-tenens-covelo-group-JV_KO0,51_KE52,64.htm?jl=1009806444534" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via Covelo Careers
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="job-row">
+                    <div class="job-title">Corporate Recruiter (Remote)</div>
+                    <div class="job-meta">
+                        <span class="company-tag">Amedisys, Inc.</span>
+                        <span class="salary-badge">$65,000 – $98,000/yr</span>
+                        <span class="posting-date">Posted 1 day ago</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-home mr-1"></i>Fully Remote
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        Leads full-cycle recruiting for a national home health & hospice provider. Focus on attracting and hiring clinical and corporate staff by improving talent pipelines and selection processes. Requires 3+ years recruiting experience; offers paid parental leave, health benefits, etc.
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://www.indeed.com/q-amedisys-work-from-home-remote-jobs.html" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via Amedisys Careers
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="job-row">
+                    <div class="job-title">Healthcare Recruiter (Travel Nursing)</div>
+                    <div class="job-meta">
+                        <span class="company-tag">Coast Medical Service</span>
+                        <span class="salary-badge">$55,000 – $100,000/yr (Base + Commission)</span>
+                        <span class="posting-date">Active – posted ~7 days ago</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-home mr-1"></i>Mostly Remote
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        Responsible for recruiting travel nurses and allied health professionals nationwide for a leading healthcare staffing firm. Manages high-volume sourcing, screening, and placement of clinicians across hospitals and clinics. Base salary $40–$55K DOE + uncapped commission (OTE up to ~$100K).
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://coastmedicalservice.com/internal-job-healthcare-recruiter/" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via Coast Medical Careers
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 4 -->
+                <div class="job-row">
+                    <div class="job-title">National Sales Recruiter (Therapy Staffing)</div>
+                    <div class="job-meta">
+                        <span class="company-tag">Jackson Therapy Partners</span>
+                        <span class="salary-badge">Competitive Base + Uncapped Commission</span>
+                        <span class="posting-date">Posted Apr 24, 2025</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-building mr-1"></i>Hybrid (Orlando, FL)
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        Oversees end-to-end recruitment of therapy professionals (PT, OT, SLP) for a national rehab staffing firm. Sales-oriented role meeting or exceeding placement targets by proactively sourcing and closing candidates. Requires 2+ years healthcare recruiting and a "go-getter" sales mentality.
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://www.remoterocketship.com/company/jacksontherapy/jobs/national-sales-recruiter-united-states" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via JTP Careers
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 5 -->
+                <div class="job-row">
+                    <div class="job-title">Talent Acquisition Recruiter (Remote)</div>
+                    <div class="job-meta">
+                        <span class="company-tag">FreedomCare</span>
+                        <span class="salary-badge">$80,000 – $90,000/yr</span>
+                        <span class="posting-date">Posted Aug 6, 2025</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-home mr-1"></i>Fully Remote
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        Drives full-cycle recruiting to scale a rapidly-growing homecare services company. Owns everything from sourcing to onboarding for clinical and corporate roles, partnering closely with hiring managers. Requires 5+ years' recruiting experience in a high-growth environment.
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://boards.greenhouse.io/embed/job_board?for=freedomcare" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via FreedomCare Careers
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 6 -->
+                <div class="job-row">
+                    <div class="job-title">Travel Nurse Recruiter (Remote)</div>
+                    <div class="job-meta">
+                        <span class="company-tag">Aya Healthcare</span>
+                        <span class="salary-badge">$70,000/yr (Base Salary)</span>
+                        <span class="posting-date">Active – posted within last 7 days</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-home mr-1"></i>Fully Remote
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        High-volume recruiter role managing a nationwide pipeline of travel nurses. Responsible for sourcing, interviewing, and placing RNs in travel assignments across various hospitals. Fully virtual position with set hours (Mon–Fri); base salary plus performance bonuses.
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://www.indeed.com/q-remote-nurse-recruiter-jobs.html" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via Aya Healthcare
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 7 -->
+                <div class="job-row">
+                    <div class="job-title">Clinical Recruiter (Healthcare)</div>
+                    <div class="job-meta">
+                        <span class="company-tag">TeamHealth</span>
+                        <span class="salary-badge">Competitive Salary + Incentives</span>
+                        <span class="posting-date">Posted within last 7 days</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-home mr-1"></i>Fully Remote
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        Recruits physicians and advanced practice providers for a leading physician practice management group. Handles full-cycle recruitment in emergency medicine and hospitalist service lines. Requires 2+ years physician or clinical recruitment experience.
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://www.teamhealthcareers.com/jobs-recruitment" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via TeamHealth Careers
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 8 -->
+                <div class="job-row">
+                    <div class="job-title">Associate Physician Recruiter I (Remote)</div>
+                    <div class="job-meta">
+                        <span class="company-tag">Radiology Partners</span>
+                        <span class="salary-badge">$70,000 – $80,000/yr + Incentives</span>
+                        <span class="posting-date">Posted May 24, 2025</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-home mr-1"></i>Fully Remote
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        Supports the Physician Recruiting team at a large radiology practice by building pipelines of radiologist candidates and sourcing passive leads nationwide. Handles initial outreach, screens, and referral generation. 1+ years of healthcare recruiting or sourcing preferred.
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://www.opentoworkremote.com/view/1362668" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via RP Careers
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 9 -->
+                <div class="job-row">
+                    <div class="job-title">Travel Nurse Recruiter (Remote)</div>
+                    <div class="job-meta">
+                        <span class="company-tag">Westways Staffing Services</span>
+                        <span class="salary-badge">$55,000 – $69,000/yr (Base Salary)</span>
+                        <span class="posting-date">Active – posted within 7 days</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-home mr-1"></i>Fully Remote
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        Focuses on recruiting travel nurses for assignments nationwide. Builds relationships with RN candidates, conducts interviews, and matches nurses to client hospital needs. Requires prior healthcare recruiting experience (hospital/travel nurse recruiting preferred).
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://www.glassdoor.com/Job/remote-nurse-recruiter-jobs-SRCH_IL.0,6_IS11047_KO7,22.htm" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via Glassdoor
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 10 -->
+                <div class="job-row">
+                    <div class="job-title">Travel Nurse Recruiter (Remote)</div>
+                    <div class="job-meta">
+                        <span class="company-tag">Core MedStaff</span>
+                        <span class="salary-badge">$70,000 – $90,000/yr</span>
+                        <span class="posting-date">Active – posted recently</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-home mr-1"></i>Fully Remote
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        Responsible for sourcing and placing travel nurses and allied clinicians for a regional healthcare staffing firm. Manages candidate relationships and client needs, working to fill travel contracts quickly. Strong healthcare agency experience required.
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://www.ziprecruiter.com/Jobs/Remote-Nurse-Recruiter/--in-California" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via Core MedStaff Jobs
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 11 -->
+                <div class="job-row">
+                    <div class="job-title">Remote Recruiter (Executive Search)</div>
+                    <div class="job-meta">
+                        <span class="company-tag">GPAC</span>
+                        <span class="salary-badge">$36,000 – $126,000/yr (Draw + Commission)</span>
+                        <span class="posting-date">Active – posted within 7 days</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-home mr-1"></i>Fully Remote
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        Commission-driven recruiter at a national executive search firm. Builds client relationships and places professionals across various industries. No prior recruiting experience required – comprehensive training provided. Unlimited income potential with 30–80% commissions on placements.
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://www.glassdoor.com/job-listing/remote-recruiter-gpac-JV_IC1133697_KO0,16_KE17,21.htm?jl=1009855064366" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via GPAC Careers
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 12 -->
+                <div class="job-row">
+                    <div class="job-title">Dermatology Healthcare Recruiter (Remote/FL)</div>
+                    <div class="job-meta">
+                        <span class="company-tag">OnSpot Dermatology</span>
+                        <span class="salary-badge">$55,000 – $70,000/yr</span>
+                        <span class="posting-date">Posted 5 days ago</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-home mr-1"></i>Remote (FL Based)
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        Leads recruiting for a mobile dermatology practice, hiring Dermatologists, Physician Assistants, NPs, and medical staff to expand services. Develops creative strategies to attract providers and coordinates hiring for new mobile clinic locations.
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://www.indeed.com/q-recruiting-l-winter-garden,-fl-jobs.html" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via OnSpot Dermatology
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 13 -->
+                <div class="job-row">
+                    <div class="job-title">Talent Acquisition Recruiter (Sourcer)</div>
+                    <div class="job-meta">
+                        <span class="company-tag">American Heart Association</span>
+                        <span class="salary-badge">$55,000 – $80,000/yr</span>
+                        <span class="posting-date">Posted within last 7 days</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-home mr-1"></i>Fully Remote
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        Supports AHA's recruiting team by sourcing and screening candidates for critical nonprofit roles (program coordinators, fundraisers, etc.). Focuses on proactive talent outreach and building diverse pipelines in alignment with the AHA mission.
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://www.indeed.com/q-remote-talent-acquisition-manager-l-texas-jobs.html" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via AHA Careers
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 14 -->
+                <div class="job-row">
+                    <div class="job-title">Talent Acquisition Recruiter (Remote)</div>
+                    <div class="job-meta">
+                        <span class="company-tag">Cars Commerce</span>
+                        <span class="salary-badge">$80,100 – $98,100/yr</span>
+                        <span class="posting-date">Active – posted recently</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-home mr-1"></i>Fully Remote
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        Full-cycle recruiter for a leading online automotive marketplace. Manages requisitions across sales, marketing, and tech teams, ensuring a smooth hiring process and excellent candidate experience. 5+ years corporate recruiting experience desired.
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://www.theladders.com/job/talent-acquisition-recruiter-cars-commerce-virtual-travel_82562542?ir=1" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via Cars.com Careers
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 15 -->
+                <div class="job-row">
+                    <div class="job-title">Technical Recruiter (Remote)</div>
+                    <div class="job-meta">
+                        <span class="company-tag">Daisy Co.</span>
+                        <span class="salary-badge">$115,000 – $125,000/yr</span>
+                        <span class="posting-date">Employer Active 2 days ago</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-home mr-1"></i>Fully Remote
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        Reports to the SVP of People & Communications to lead technical recruiting efforts for a growing company. Owns the full recruiting cycle for engineering and IT roles, including advising on job requirements, sourcing passive tech candidates, and delivering a great hiring experience.
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://www.indeed.com/q-remote-recruiter-$120k-jobs.html" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via Daisy Co.
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 16 -->
+                <div class="job-row">
+                    <div class="job-title">Cleared Tech Talent Recruiter (GovCon)</div>
+                    <div class="job-meta">
+                        <span class="company-tag">MissionBox Solutions</span>
+                        <span class="salary-badge">$107,000 – $230,000/yr (Commission-Based)</span>
+                        <span class="posting-date">Posted 1 day ago</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-home mr-1"></i>Fully Remote
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        Recruits IT professionals with active security clearances for government contracting (DoD/IC) roles. Handles end-to-end hiring of cleared software engineers, cyber analysts, etc. High-commission role with uncapped commission + performance bonuses.
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://www.indeed.com/q-remote-recruiter-$120k-jobs.html" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via MissionBox Careers
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 17 -->
+                <div class="job-row">
+                    <div class="job-title">IT Recruiter (Cleared GovCon – Remote)</div>
+                    <div class="job-meta">
+                        <span class="company-tag">MissionBox Solutions</span>
+                        <span class="salary-badge">$107,000 – $230,000/yr (Performance-Based)</span>
+                        <span class="posting-date">Posted 1 day ago</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-home mr-1"></i>Fully Remote
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        Full-cycle recruiting of cleared IT and engineering talent for government projects. Focuses on sourcing candidates with active clearances and matching them to federal contract roles. Fully remote with uncapped earnings potential.
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://www.indeed.com/q-remote-recruiter-$120k-jobs.html" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via MissionBox Careers
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 18 -->
+                <div class="job-row">
+                    <div class="job-title">Technical Recruiter (Cleared GovCon)</div>
+                    <div class="job-meta">
+                        <span class="company-tag">MissionBox Solutions</span>
+                        <span class="salary-badge">$107,000 – $230,000/yr (Commission-Based)</span>
+                        <span class="posting-date">Posted 1 day ago</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-home mr-1"></i>Fully Remote
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        Technical recruiting for cleared government tech roles. Builds candidate pipeline of engineers/developers with security clearances and liaises with government clients. Remote, Monday–Friday with uncapped commission structure.
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://www.indeed.com/q-remote-recruiter-$120k-jobs.html" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via MissionBox Careers
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 19 -->
+                <div class="job-row">
+                    <div class="job-title">Recruiter (Contract) – Crypto/FinTech</div>
+                    <div class="job-meta">
+                        <span class="company-tag">CoinTracker</span>
+                        <span class="salary-badge">~$70 – $80/hour (Contract)</span>
+                        <span class="posting-date">Active – posted recently</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-clock mr-1"></i>6-Month Contract
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        6-month contract handling recruiting and hiring processes for a crypto portfolio tracking startup. Collaborates with hiring managers and leadership to identify top talent and improve hiring funnels. Role emphasizes full-cycle recruiting in a fast-moving tech environment.
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://www.indeed.com/q-remote-recruiter-$120k-jobs.html" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via CoinTracker
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 20 -->
+                <div class="job-row">
+                    <div class="job-title">Contract Technical Recruiter (Remote)</div>
+                    <div class="job-meta">
+                        <span class="company-tag">PermitFlow</span>
+                        <span class="salary-badge">$50 – $70/hour (Contract)</span>
+                        <span class="posting-date">Posted 3 days ago</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-clock mr-1"></i>Contract Role
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        Full-time contract recruiter for a construction-tech startup. Develops and executes sourcing strategies to hire top-tier software engineers and product professionals. Manages recruiting operations on a contract basis (hourly).
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://www.indeed.com/q-remote-recruiter-$120k-jobs.html" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via PermitFlow
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 21 -->
+                <div class="job-row">
+                    <div class="job-title">Technical Recruiter (Florida, Veteran Focus)</div>
+                    <div class="job-meta">
+                        <span class="company-tag">Elite Consulting</span>
+                        <span class="salary-badge">$65,000 – $80,000/yr</span>
+                        <span class="posting-date">Posted 2 days ago</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-home mr-1"></i>Remote (FL Residents Only)
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        Technical recruiter sourcing IT talent, with an emphasis on military veterans. Must have prior experience in military or defense recruiting. Handles full-cycle recruiting and client coordination. Benefits include health, 401(k), PTO.
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://www.indeed.com/q-recruiting-l-winter-garden,-fl-jobs.html" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via Elite Jobs
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 22 -->
+                <div class="job-row">
+                    <div class="job-title">Physician Recruiter (Hybrid – Orlando area)</div>
+                    <div class="job-meta">
+                        <span class="company-tag">Vesta Teleradiology</span>
+                        <span class="salary-badge">$60,559 – $72,932/yr</span>
+                        <span class="posting-date">New Listing (posted this week)</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-building mr-1"></i>Hybrid (Lake Mary, FL)
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        Coordinates recruitment of radiologists and other physicians for a teleradiology group. Manages physician sourcing, screening, and hiring processes. Requires 2+ years of physician/healthcare recruiting experience.
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://www.indeed.com/q-recruiting-l-winter-garden,-fl-jobs.html" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via Vesta Teleradiology
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 23 -->
+                <div class="job-row">
+                    <div class="job-title">Recruiting Consultant (Healthcare Staffing)</div>
+                    <div class="job-meta">
+                        <span class="company-tag">HealthCare Support</span>
+                        <span class="salary-badge">Base + Commission (Not Listed)</span>
+                        <span class="posting-date">Posted 5 days ago</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-building mr-1"></i>Hybrid (Maitland, FL)
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        Serves as a recruiting consultant at a healthcare staffing agency, recruiting nurses and medical staff for client healthcare organizations. Utilizes company database and leads to contact and place candidates.
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://www.indeed.com/q-recruiting-l-winter-garden,-fl-jobs.html" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via HealthCare Support
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 24 -->
+                <div class="job-row">
+                    <div class="job-title">Recruiter (Hybrid – Insurance Agency)</div>
+                    <div class="job-meta">
+                        <span class="company-tag">Marsh McLennan Agency</span>
+                        <span class="salary-badge">Not Listed</span>
+                        <span class="posting-date">Posted 6 days ago</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-building mr-1"></i>Hybrid (Maitland, FL)
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        Handles internal recruiting for an insurance brokerage, filling sales, account management, and support roles. Builds candidate pipelines through LinkedIn and community outreach. Requires 3+ years recruiting experience (insurance/financial industry a plus).
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://www.indeed.com/q-recruiting-l-winter-garden,-fl-jobs.html" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via Marsh McLennan Careers
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 25 -->
+                <div class="job-row">
+                    <div class="job-title">Remote Campus Recruiter (RPO)</div>
+                    <div class="job-meta">
+                        <span class="company-tag">ManpowerGroup Talent Solutions</span>
+                        <span class="salary-badge">$62,400 – $72,800/yr</span>
+                        <span class="posting-date">Posted 4 days ago</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-home mr-1"></i>Fully Remote
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        Campus recruiting specialist for an RPO client. Manages university relations, on-campus events, and internship/full-time hiring for the client's early career programs. Requires experience in high-volume or campus recruiting.
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://www.theladders.com/job-listing/-3976088928009328070/campus-recruiter-remote-edt-cdt-time-zone-rpo-consultant.htm" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via ManpowerGroup
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job 26 -->
+                <div class="job-row">
+                    <div class="job-title">Remote Recruiter (Staffing Agency)</div>
+                    <div class="job-meta">
+                        <span class="company-tag">Confident Staff Solutions</span>
+                        <span class="salary-badge">Not Listed</span>
+                        <span class="posting-date">Posted 3 days ago</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-home mr-1"></i>Fully Remote
+                        </span>
+                    </div>
+                    <div class="job-description">
+                        Full-cycle remote recruiter at a staffing firm, responsible for sourcing, screening, and presenting qualified candidates for client job openings across various industries. Requires strong self-management and client communication skills.
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="https://www.theladders.com/job-listing/-352553548789885913/remote-recruiter.htm" class="apply-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Apply via Confident Staff Solutions
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer -->
+            <div class="text-center mt-16 py-8 border-t border-gray-200">
+                <p class="text-gray-600 mb-4">
+                    All positions posted within the last 7 days • Mid-to-senior level opportunities • $60K+ minimum salary requirements met
+                </p>
+                <div class="flex justify-center items-center space-x-4 text-sm text-gray-500">
+                    <span><i class="fas fa-check-circle text-green-500 mr-1"></i>Healthcare Focus</span>
+                    <span><i class="fas fa-check-circle text-green-500 mr-1"></i>Remote Friendly</span>
+                    <span><i class="fas fa-check-circle text-green-500 mr-1"></i>Competitive Salaries</span>
+                    <span><i class="fas fa-check-circle text-green-500 mr-1"></i>Growth Opportunities</span>
+                </div>
+                <p class="text-sm text-gray-400 mt-4">Good luck with your job search, Will!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
